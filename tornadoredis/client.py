@@ -276,7 +276,7 @@ class Client(object):
         """
         a = super(Client, self).__getattribute__(item)
         try:
-            if isinstance(a, collections.Callable) and a.__self__:
+            if callable(a) and a.__self__:
                 try:
                     a = self.__class__.__dict__[item]
                 except KeyError:
